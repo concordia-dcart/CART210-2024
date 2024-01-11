@@ -1,0 +1,31 @@
+.reveal .mermaid svg {
+  min-width: 100%;
+  height: auto;
+}
+
+.reveal .mermaid svg .label-container {
+  fill: var(--r-background-color) !important;
+}
+
+.reveal .mermaid svg .label foreignObject {
+  overflow: visible !important;
+}
+
+.reveal .mermaid svg .nodeLabel {
+  color: var(--r-main-color) !important;
+}
+
+.reveal .mermaid svg .edgePaths path {
+  stroke: var(--r-main-color) !important;
+}
+
+.reveal .mermaid svg marker {
+  stroke: var(--r-main-color) !important;
+  fill: var(--r-main-color) !important;
+}
+
+.reveal .mermaid svg .edgeLabel {
+  background-color: var(--r-background-color) !important;
+  color: var(--r-main-color) !important;
+  font-size: 13px;
+}
