@@ -18,7 +18,7 @@ Wikis are web-based, collaborative software that enable people to modify content
 
 The term "Wiki Wiki Web" was inspired by the "Wiki Wiki Shuttle" at Honolulu International Airport, as named by Ward Cunningham.[^anderson10wiki] In Hawaiian, "Wiki" means "quick" or "fast."
 
-There are numerous platforms for running wikis. Among the most popular are  [MediaWiki](https://www.mediawiki.org/), [DokuWiki](https://www.dokuwiki.org/dokuwiki), and [GitHub](Glossary#github).
+There are numerous platforms for running wikis. Among the most popular are  [MediaWiki](https://www.mediawiki.org/), [DokuWiki](https://www.dokuwiki.org/dokuwiki), and [GitHub]([Glossary#github](https://docs.github.com/en/communities/documenting-your-project-with-wikis/about-wikis)).
 
 [^anderson10wiki]: Anderson, Melanie O., and Jon R. Serra. 2010. “Is that a Wiki in Your Classroom?.” In *Proceedings of the 2010 Association of Small Computers Users in Education (ASCUE) Conference*.
 
