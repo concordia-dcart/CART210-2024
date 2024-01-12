@@ -2,7 +2,8 @@
 Website for CART210—New Media Theory.
 
 ## Links to class resources
-- [Course syllabus](https://drive.google.com/file/d/1aucaCLxYD-4tfr-pDtnQw6uOi3R3SdtV/view?usp=drive_link)
+- [Course site](https://concordia-dcart.github.io/CART210-2024/)
+- [Syllabus](https://drive.google.com/file/d/1aucaCLxYD-4tfr-pDtnQw6uOi3R3SdtV/view?usp=drive_link)
 - [New media keywords](/glossary.md)
 - [Class 01. Introduction](/CART210-2024/C01-introduction)
 
