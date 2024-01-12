@@ -12,4 +12,4 @@ Website for CART210—New Media Theory.
 - Markdown
 - Moodle. Use your Concordia account.
 - Perusall. Ask [Gabriel](mailto:gabriel.vigliensoni@concordia.ca) or [Chrys](mailto:chrys.vilvang@concordia.ca) for an invite.
-- Zotero. Download it. 
+- Zotero. Download it. Use and abuse it.
