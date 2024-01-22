@@ -14,6 +14,10 @@ The glossary will be improved throughout the term, with three sprint deadlines.
 
 ---
 
+## Affordance 
+
+This is known as the capabilities of a sentient beign of ...
+
 ## GitHub
 GitHub is a web-based platform for version control and collaboration using Git,[^github24wikis] allowing users to manage and share code in various repositories and offering wikis for documentation and collaborative editing. GitHub employs Git software, offering distributed version control, access control, bug tracking, feature requests, task management, continuous integration, and project wikis.[^kinsta24what]
 
@@ -36,6 +40,7 @@ There are numerous platforms for running wikis. Among the most popular are  [Med
 [^ebersbach05wiki]: Ebersbach, Anja, Markus Glaser, and Richard Heigl. 2005. “The Wiki Concept.” In *Wiki - Web Collaboration*, 1-24. Berlin: Springer.
 
 [^parker07wiki]: Parker, Kevin, and Joseph Chao. 2007. “Wiki as a Teaching Tool.” *Interdisciplinary Journal of E-Learning and Learning Objects* 3 (1): 57–72.
+
 
 
 
