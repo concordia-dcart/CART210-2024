@@ -21,7 +21,9 @@ GitHub is a web-based platform for version control and collaboration using Git,[
 
 [^kinsta24what]: Kinsta. 2024. ”What Is GitHub? A Beginner's Introduction to GitHub.” Accessed January 2. https://kinsta.com/knowledgebase/what-is-github/.
 
+
 ## NFT
+
 
 ## Wiki
 
