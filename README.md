@@ -2,6 +2,7 @@
 Website for CART210—New Media Theory.
 ## Classes
 - [Class 01. Introduction](https://concordia-dcart.github.io/CART210-2024/C01-introduction)
+- [Class 02. Birth of Bits](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C2)
 
 ## Resources
 - [Syllabus](https://drive.google.com/file/d/1aucaCLxYD-4tfr-pDtnQw6uOi3R3SdtV/view?usp=drive_link)
