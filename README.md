@@ -10,7 +10,8 @@ Some classes heavily incorporate [Jhave's](https://glia.ca/) course conceptualiz
 ## Resources
 - [Syllabus](https://drive.google.com/file/d/1aucaCLxYD-4tfr-pDtnQw6uOi3R3SdtV/view?usp=drive_link)
 - [Course site](https://concordia-dcart.github.io/CART210-2024/)
-- [New media keywords](/glossary.md)
+- [New media keywords](https://github.com/concordia-dcart/CART210-glossary/blob/main/glossary.md)
+
 
 
 ## Technology we are using in CART210
