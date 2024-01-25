@@ -13,6 +13,18 @@ Each student must:
 The glossary will be improved throughout the term, with three sprint deadlines.
 
 ---
+##BigData
+Big Data is the use of a large quantity of stored and analyzed information to form accurate understandings and predictions about the world. The wielding of this type of information processing has been accelerated by improvements in technology and the growing amounts of digital connections between people and organizations. 
+Big Data is used in everything from health care to political campaigns. Notably big data was a cornerstone of Barack Obama’s presidential campaigns where personalized messaging and interaction was optimized by the assessment of potential voter preferences (Landon-Murray 2016, 94). Large-scale data analysis was also used in the NBA to track player shooting accuracy. A sensor placed on the hoop would track and record the player’s shots from different points on the court. It would then be able to suggest where to shoot from to maximize winning potential. (Rice 2023, 1). 
+In both of these examples, real-world phenomena were tracked and enumerated. They were then sent through systems and by people (data scientists) who would find patterns that could predict outcomes. 
+
+Akst, George. 2019. “Sponsor’s Corner: What Is a Data Scientist, Anyway?” Accessed January 22. Phalanx 52, no. 1 (2019): 58–60. https://www.jstor.org/stable/26627999.
+
+Landon-Murray, Michael. 2016. “Big Data and Intelligence: Applications, Human Capital, and Education.” Accessed January 23. Journal of Strategic Security 9, no. 2 (2016): 92–121. http://www.jstor.org/stable/26466778.
+
+Rice, Mae. 2023.“25 Data Science Applications and Examples.” Accessed January 22. Built In, February 9, 2023. https://builtin.com/data-science/data-science-applications-examples. 
+
+
 
 ## GitHub
 GitHub is a web-based platform for version control and collaboration using Git,[^github24wikis] allowing users to manage and share code in various repositories and offering wikis for documentation and collaborative editing. GitHub employs Git software, offering distributed version control, access control, bug tracking, feature requests, task management, continuous integration, and project wikis.[^kinsta24what]
