@@ -6,6 +6,7 @@ Some classes heavily incorporate [Jhave's](https://glia.ca/) course conceptualiz
 ## Weeks
 - [Week 01. Introduction](https://concordia-dcart.github.io/CART210-2024/C01-introduction)
 - [Week 02. Birth of Bits](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C2)
+- [Week 03. Understanding Media and Hypermedia](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C3)
 
 ## Resources
 - [Syllabus](https://drive.google.com/file/d/1aucaCLxYD-4tfr-pDtnQw6uOi3R3SdtV/view?usp=drive_link)
