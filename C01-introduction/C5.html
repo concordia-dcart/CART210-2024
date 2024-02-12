@@ -1,0 +1,2953 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/night-custom.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="rgb(0,0, 0)" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+[*Year of The Dragon* by Anthony Lam](https://www.behance.net/gallery/190562809/Year-of-The-Dragon-)
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.5" data-background-image="https://media.vigliensoni.com/clips/year-of-the-dragon.gif" -->
+
+
+
+
+# Happy New Year
+#### 甲辰龍年
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-opacity="0.9" data-background-image="https://d2w9rnfcy7mm78.cloudfront.net/12578363/original_10bf68a97643ca4239109f1de5e0705c.gif?1626667763?bc=0" -->
+# New Media 
+### _<mark>Theories, Art, and Practice</mark>_
+
+### Class 5
+<br>
+
+CART 210 – Winter 2024
+<br>
+
+Prof. Gabriel Vigliensoni <br>
+TA Chrys Vilvang
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+you may have asked yourself:
+
+## <mark>what is the purpose of CART210? </mark>
+
+why do we have to know theory(ies) to be artists or designers?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+the <mark style="background: #FF5582A6;">preliminary goal</mark> of CART210 is to expose you to a diversity of _discourse networks_ in order <mark>to encourage you to consider your work</mark> in terms  <mark style="background: #698BD0;">that are relevant to the ongoing dance of culture</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+[_discourse networks_ is a concept by Friedrich Kittler](https://monoskop.org/images/1/1f/Kittler_Friedrich_Discourse_Networks_1800_1900.pdf) that describes the many ways in which 
+
+<mark>technologies, media systems, cultural contexts, and social institutions</mark> <mark style="background: #698BD0;">influence and shape the production, dissemination, and reception of knowledge and information</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+our thoughts and ideas aren't just floating around freely; they are <mark style="background: #698BD0;">influenced by societal rules, the technological landscape, and our technological abilities</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+it is not just about the technologies and gadgets  we use, but  <mark style="background: #FF5582A6;">how they change the rules of the game</mark>, i.e., 
+
+<mark>what gets said, who gets to speak, and how ideas travel</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<mark>when we study how information spreads or why certain ideas become popular, </mark>
+
+we must consider this whole interconnected web<mark style="background: #698BD0;">—the discourse network—</mark>instead of looking at just one piece of it
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+## <mark>what is the purpose of CART210? </mark>
+
+
+the ultimate goal is <mark style="background: #698BD0;">to enable you to situate your work</mark> lucidly, thoughtfully, and competently within the contemporary cultural landscape and society
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### housekeeping
+
+### interactivity and immersion
+
+### nmr presentations
+
+### prompt engineering
+
+### mid-term self reflection
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+## proof of work
+
+
+in-class notes — upload  to moodle
+
+weekly readings — synopsis and question
+
+[collaborative glossary](https://github.com/concordia-dcart/CART210-glossary/blob/main/glossary.md#posthuman) — definition and critical collage. [link your image](https://github.com/concordia-dcart/CART210-glossary/tree/main?tab=readme-ov-file#adding-images)!
+
+[new media exhibition](https://moodle.concordia.ca/moodle/mod/page/view.php?id=3791450) — report
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+## <mark style="background: #698BD0;">[activity](https://moodle.concordia.ca/moodle/mod/forum/view.php?id=3791128)</mark>
+
+
+find video/game/design/sound intervention of an artist/designer/theorist <mark>discussing their work or ideas in a way that seems theoretically relevant and exciting to you</mark>
+
+share what you find, focusing on how the concepts and theories discussed relate to the topics discussed in class
+
+due on monday! (no class and no reading!)
+</div>
+
+<aside class="notes"><p><a href="https://drive.google.com/file/d/1KpvAKEOeSfrk-yeVLxo1J2MkqEA2UJaa/view">crafting an abstract</a></p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+<div class="block">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Lucy_Suchman.jpeg" alt="Lucy Suchman | 175" style="width: 175px; object-fit: fill">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+In _Plans and Situated Actions: The Problem of Human-Machine Communication_
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+
+Lucy Suchman (1985)
+## _Plans and Situated Actions_
+</div>
+
+<aside class="notes"><p><strong>Lucy Suchman</strong> is Professor Emerita of Anthropology of Science and Technology in the Department of Sociology at Lancaster University</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## your questions
+
+
+
+why do academics write like this? (bea)<!-- .element: class="fragment" data-fragment-index="1" -->
+
+who is at the center of the interaction: people or machines? (line)<!-- .element: class="fragment" data-fragment-index="2" -->
+
+
+what motivates this emphasis on eliminating the form? (dorsa)<!-- .element: class="fragment" data-fragment-index="3" -->
+
+what examples or where can we see Lucy Suchman’s influence in the way we design technology human interactions, in today’s time? (sabrina)<!-- .element: class="fragment" data-fragment-index="4" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+<div class="block">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/df/Lucy_Suchman.jpeg" alt="Lucy Suchman | 175" style="width: 175px; object-fit: fill">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+four LLMs newly available for free in CA since friday
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+Who is Lucy Suchman?
+
+[Mixtral-8x7B-Instruct-v0.1](https://hf.co/chat/r/IuArH7l) 
+
+[[meta-llama/Llama-2-70b-chat-hf](https://huggingface.co/chat/settings/meta-llama/Llama-2-70b-chat-hf)](https://hf.co/chat/r/BYK2axb)
+
+[[Nous-Hermes-2-Mixtral-8x7B-DPO](https://huggingface.co/chat/settings/NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO)](https://hf.co/chat/r/Pro3SSq)
+
+[CodeLlama-70b-Instruct-hf](https://hf.co/chat/r/qZJkU4O)
+
+[ChatGPT-4 Turbo](https://chat.openai.com/share/aca74c8d-ab82-4bbe-ace1-300dee4da75f)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+PhD ethnographic research by Lucy Suchman at Xerox PARC (1977)
+</div>
+
+
+
+</mark>
+</div>
+
+
+
+
+
+
+
+<iframe width="1000" height="563" src="https://www.youtube.com/embed/DUwXN01ARYg" title="Ethnography and the PARC Copier" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+plans and situated actions<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+Suchman's ethnographic study of photocopier use revealed that <mark>real-world interactions were far more complex than designers had anticipated</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+plans and situated actions<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Lucy Suchman (2000)
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+Suchman showed that the copier's user interface design, <mark style="background: #698BD0;">based on a predefined user model</mark>, <mark style="background: #FF5582A6;">was fundamentally flawed</mark>.
+
+ she argued that underlying model of “plan” and then “act” is not how people work
+
+> <mark>“...we need time to make unfamiliar devices our familiars...”</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+plans and situated actions<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Lucy Suchman (2000)
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+> “ [the] dynamics of computational artifacts <mark>extend beyond the interface</mark> narrowly  defined, <mark>to relations of people with each other</mark>
+and to the place of computing in their ongoing activities ...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+plans and situated actions<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Lucy Suchman (2000)
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+> ... <mark>system design</mark>, it follows, <mark>must include</mark> not only the design of innovative technologies, but <mark>their integration into the rest of the social and material world</mark>.”
+</div>
+
+<aside class="notes"><p>THE HCI COMMUNITY, WITH K. EHRLICH AND A. HENDERSON design
+(Inter)facing the Millennium:
+Where Are We (Going)?</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+# the user as central to design
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+# the <mark style="background: #FF5582A6;">user</mark> as central to design
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+“user” from Old French and  Latin *usare*
+
+“employ, make use of, practice, frequent”
+
+past participle stem of Latin *uti*  “make use of, profit by, take advantage of, enjoy, apply, consume” 
+
+the root is also the source of the words “utility”, “utensil”, “utilitarian”
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+## impersonal
+
+*user* can feel <mark style="background: #FF5582A6;">impersonal and abstract</mark>, reducing the human aspect of the interaction and <mark style="background: #698BD0;">not fully representing the individual's experiences or needs</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+## homogenizing
+
+*user* can lead to generalizations that <mark style="background: #FF5582A6;">fail to acknowledge</mark> <mark>different needs, abilities, and contexts of individuals</mark> engaging with a design
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+## lack of empathy
+
+referring to people as “users” may lead designers to have <mark>emotional detachment</mark> for the people they're designing for
+
+it creates a <mark style="background: #FF5582A6;">psychological distance</mark> <mark style="background: #698BD0;">between the designer and the person/audience
+</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Source: https://www.etymonline.com/word/user
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/user-over-time.png" alt="use of user" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+in human-centered design, there is now an <mark>emphasis on terms that reflect understanding and empathy</mark> toward individuals' experiences
+
+<mark style="background: #698BD0;">terms like human or audience are sometimes preferred</mark>
+
+these focus on individuals as whole human beings with complex needs and desires, beyond just their interactions with a particular system or product
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# the <mark>human</mark> as central to design
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic">
+<div class="block">
+
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 50%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+### the mother of all demos (1968)
+
+
+<iframe width="600" height="400" src="https://www.youtube.com/embed/UhpTiWyVa6k?start=1832" title="The Mother of All Demos, presented by Douglas Engelbart (1968)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+Doug Engelbart's demonstration of experimental computer technologies.
+his live demonstration featured the introduction of the computer mouse, video and teleconferencing, hypertext and hypermedia, dynamic file linking, word processing,  and a collaborative real-time editor
+<!-- .element: style="font-size: 24px" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Brenda Laurel (1991)
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+# computers as theater
+
+> “Think of the computer not as a tool, but as a medium.”
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+# interactivity
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+## <mark>inter</mark> - <mark style="background: #FF5582A6;">activitas</mark>
+
+*inter* &rarr; <mark>between or among</mark>
+
+*activitas* &rarr;  <mark style="background: #FF5582A6;">state of being active or an act</mark>
+
+activities or processes that occur between entities or agents
+
+highlighs the aspect of mutual or reciprocal action or influence
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## interactivity in the arts 
+
+arose as a defining element of the twentieth-century avant-garde
+
+interactivity facilitated (and was facilitated by) a new relationship between audience and creator
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Paul Haesaert. 1949. _Visit to Picasso_.
+</div>
+
+
+
+</mark>
+</div>
+
+
+<iframe width="1000" height="562" src="https://www.youtube.com/embed/UOMI1JKfWwc" title="Picasso HD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## interactivity in the arts 
+
+
+a relationship that broke down the *fourth wall* of artistic practice 
+
+the fourth wall is a term borrowed from performance that considers the theatrical stage as having three walls and an invisible fourth wall between the actors and audience
+
+“breaking” the fourth wall has become an expression for <mark>eliminating the divide between performer or creator and audience</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+<div class="block">
+
+<img src="https://media.vigliensoni.com/clips/frances-dyson.png" alt="Frances Dyson | 175" style="width: 175px; object-fit: fill">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+In _Sounding New Media: Immersion and Embodiment in the Arts and Culture_
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+Frances Dyson (2009)
+## _Immersion_
+
+
+
+
+notes: Frances Dyson is Emeritus Professor of Cinema and Technocultural Studies at the University of California
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## your questions
+
+
+when boundaries between reality and alternative reality get blurred to the point where is practically inexistent, what kind of society would we have? (paria)
+
+
+how impactful could VR be as a medium, and is there another interactive/immersive medium that could impact human behavior even more significantly? (lucas)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Welcoming the Year of the Dragon in Nanning
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+<iframe width="1000" height="563" src="https://www.youtube.com/embed/5XxmQ45dYUw" title="Drones in dragon formation illuminate Nanning to welcome the Year of the Dragon" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+<iframe width="897" height="505" src="https://www.youtube.com/embed/bAWcmC-4aKk" title="The first M-drone light show in 2024 dragon year" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## your questions
+
+
+
+is sound really the most immersive medium? (anonymous)<!-- .element: class="fragment" data-fragment-index="2" -->
+
+
+how much do we overlook sound in our media unless its the main focus of the media? (sean)<!-- .element: class="fragment" data-fragment-index="3" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+France Dyson. 2016. “Sound Art Matters”. Keynote talk. Aarhus University. 
+</div>
+
+
+
+</mark>
+</div>
+
+
+
+
+Is <mark>sound matter</mark>? Or is it immaterial?
+
+<iframe width="1000" height="562" src="https://www.youtube.com/embed/Iq7cfwqp-wE?start=63" title="Frances Dyson - Art: Sound: Matter" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <mark>immersion</mark>
+
+from the Latin “immersio,” itself derived from “immergere” 
+
+“in-” meaning “into”
+
+“mergere” meaning “to plunge” or “to dip” 
+
+<mark style="background: #FF5582A6;">plunging or dipping something into a liquid</mark>
+</div>
+
+<aside class="notes"><p>Over time, its usage expanded to include the idea of being deeply engaged or involved in a particular activity or subject.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Char Davies. 1995. _Osmose_. 16 min.
+</div>
+
+
+
+</mark>
+</div>
+
+
+<iframe width="897" height="673" src="https://www.youtube.com/embed/54O4VP3tCoY" title="Osmose (1995) - Char Davies - 16 min." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+[Osmose Mini documentary by Char Davies](https://youtu.be/bsT59fp8LpY)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+<div class="block">
+
+<img src="https://www.factsnippet.com/webp-licensed-images/char-davies.webp" alt="char davies | 150" style="width: 150px; object-fit: fill">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+### char davies
+toronto (1954)
+
+artistic focus: immersive VR installations
+
+themes: exploration of spatial perception and relationship between the human body and the natural world
+
+famous works: _Osmose_ (1995) and _Ephémère_ (1998)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+### char davies
+
+founder of Softimage (CGI, 3D), along with Daniel Langlois
+
+[The Daniel Langlois Foundation](https://www.fondation-langlois.org/html/e/)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<iframe width="897" height="673" src="https://www.youtube.com/embed/XCWaMll0leI" title="Ephémère (1998) - Char Davies - 16 min." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<figcaption>Ephémère (1998) by Char Davies</figcaption>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+immersion
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+
+<!-- .slide: style="font-size: 30px" -->
+
+
+
+immersion is not just about being surrounded by a digital environment but <mark>experiencing a sense of spatial envelopment and connectedness</mark>
+
+we can transcending traditional interactivity by<mark style="background: #698BD0;">designing and embracing a fully immersive experience</mark>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+immersion
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+
+<!-- .slide: style="font-size: 30px" -->
+
+
+Davies's work is grounded in a <mark>critique of ocular-centrism and the instrumental view of technology</mark>
+
+she advocates for a <mark style="background: #698BD0;">perceptual experience that emphasizes the connectedness of all things</mark> and the ethical dimension of being-in-the-world
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ocularcentrism
+critic to new media art
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+new media has focused on
+
+three-dimensionality
+
+and interactivity
+
+<mark>and mostly has ignored aurality</mark><sup id="fnref:1" role="doc-noteref">1</sup>
+
+
+
+
+
+
+<div class="footnotes" role="doc-endnotes">
+<ol>
+<li id="fn:1" role="doc-endnote" class="footnote"><p>
+
+Dyson, Frances. 2009. _Sounding New Media: Immersion and Embodiment in the Arts and Culture_.
+
+</p></li></ol>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# letting be
+
+## seeing
+
+## hearing
+
+## touching
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## sound might help to *see freshly*
+</div></script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
