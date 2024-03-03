@@ -9,6 +9,7 @@ Some classes heavily incorporate [Jhave's](https://glia.ca/) course conceptualiz
 - [Week 03. Understanding Media and Hypermedia](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C3)
 - [Week 04. Cybernetics](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C4)
 - [Week 05. Interactivity and immersion](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C5)
+- [Week 06. ADHD](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C6)
 
 
 ## Resources
