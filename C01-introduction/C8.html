@@ -1,0 +1,3013 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/night-custom.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-dark-background drop" data-background-color="rgb(100,100, 100)" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-auto-animate="true" -->
+<!-- .slide: data-background-opacity="0.25" data-background-image="https://d2w9rnfcy7mm78.cloudfront.net/12578363/original_10bf68a97643ca4239109f1de5e0705c.gif?1626667763?bc=0" -->
+# New Media
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-opacity="0.9" data-background-image="https://d2w9rnfcy7mm78.cloudfront.net/12578363/original_10bf68a97643ca4239109f1de5e0705c.gif?1626667763?bc=0" -->
+# New Media 
+### _<mark>Theories, Art, and Practice</mark>_
+
+#### Class 8: Machine learning and AI
+<br>
+
+CART 210 – Winter 2024
+<br>
+
+Prof. Gabriel Vigliensoni <br>
+TA Chrys Vilvang
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+cyberspace, cyberfeminisim, avatars
+
+interviews and talks by nancy patterson, sadie plant, and donna haraway
+
+interview with guest artist fran gonzález rosas
+
+(cyber)influencers, pop stars, and bots
+
+NMR presentations
+
+individual work 
+
+notes: “hyper-self-mediation: identity, image, system”
+individual work (for exercises for your final project title and abstract)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-opacity="0.9" data-background-image="https://media.vigliensoni.com/clips/steering-genai-gvm.001.png" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-opacity="0.9" data-background-image="https://media.vigliensoni.com/clips/steering-genai-gvm.003.png" -->
+
+
+<iframe width="900" height="400" src="https://www.youtube.com/embed/XodUaJ7UNOI" title="Babbling spaces by Vigliensoni@CMMAS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-opacity="0.9" data-background-image="https://media.vigliensoni.com/clips/steering-genai-gvm.004.png" -->
+<iframe width="900" height="400" src="https://www.youtube.com/embed/LY4Ja9TcrDs" title="Re·col·lec·tions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+housekeeping<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+what is ai?
+
+ml applications
+
+*on the dangers of stochastic parrots*
+
+NMR presentations
+
+guest lecture with Lindsay Rodgers (AAII): *Mapping marginalized voices and women’s contributions to AI*
+
+individual work (final project title, abstract)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+# ai
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+what is ai?<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+artificial intelligence, machine leaning, neural networks, deep learning, ...
+</div>
+
+
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+## ai,  ml,  nn,  dl,  ...
+
+
+
+
+
+
+
+
+
+<img src="https://static.javatpoint.com/tutorial/machine-learning/images/deep-learning-vs-machine-learning-vs-artificial-intelligence1.png" alt="ML | 500" style="width: 500px; object-fit: fill">
+</div>
+
+<aside class="notes"><p>Terms frequently used interchangeably, causing confusion</p>
+<p>Technologies from largest to smallest, each one encompassing the next</p>
+<ul>
+<li>ML ⊂ AI, system that uses statistical methods to find and learn patterns in data, without being explicitly programmed</li>
+<li>NN ⊂ ML, one method for training ML models. Neural networks can be deep or shallow</li>
+<li>DL ⊂ NN, models are trained using massive datasets. Features are learned from data</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+ai is a term to specify <mark>machines and techniques that mimic</mark> human intelligence, perception, and behaviour
+
+degrees of intelligence<!-- .element: style="font-size: 24px" -->
+
+<div class="block">
+
+artificial <mark style="background: #698BD0;">narrow</mark> intelligence (ani)
+
+artificial <mark style="background: #698BD0;">general</mark> intelligence (agi)
+
+artificial <mark style="background: #698BD0;">super</mark> intelligence (asi)
+
+</div>
+</div>
+
+<aside class="notes"><p>ai term to specify machines and techniques that mimic human intelligence, perception, and behaviour</p>
+<ul>
+<li>Artificial narrow intelligence—ANI performs a specific task (e.g., identifying specific people in photos, playing chess, etc)</li>
+<li>Artificial general intelligence—AGI would perform in par with another human</li>
+<li>Artificial super intelligence—ASI would surpass human intelligence and ability</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+machine learning<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+traditional programming
+
+vs
+
+machine learning
+</div>
+
+<aside class="notes"><p>the <mark>traditional way</mark> to make a computer accomplish or do something is to give it <mark>explicit instructions that are written by hand</mark> in a given programming language (e.g., if this happens, do this, otherwise do that, etc.) </p>
+<p>this computer programming method is extremely successful, and it has been used to develop just about all software running on our computers, phones, planes, and cars</p>
+<p>however, this method is not always the most practical.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+machine learning<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/01-what-is-machine-learning-parrot.png" alt="Parrot | 500" style="width: 500px; object-fit: fill">
+</div>
+
+<aside class="notes"><p>For example, let’s consider developing a program to identify images.</p>
+<p>It would be very hard to write such a program “by hand” because of the high number of possibilities to consider (many types of animals and objects,  various orientations, lighting conditions, occlusions, etc.)</p>
+<p>Instead, it would be easier to use the <mark>machine learning method</mark>, which is a method, as well as a scientific discipline, used <mark>to program computers using data instead of explicit instructions.</mark> </p>
+<p>In the case of image identification, the machine learning method would consist in <mark style="background: #698BD0;">giving the computer a set of images labeled by what they are, and then letting the computer figure out by itself how to identify new images.</mark></p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+dataset<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Images taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/02-what-is-machine-learning-dataset.png" alt="Dataset | 500" style="width: 500px; object-fit: fill">
+
+
+
+<img src="https://media.vigliensoni.com/clips/02-what-is-machine-learning-dataset-class-function.png" alt="Dataset | 500" style="width: 500px; object-fit: fill">
+</div>
+
+<aside class="notes"><p>for example, now, we want to classify mushrooms. the computer has been given  eight images of boletes and eight images of morels, each labeled by what they are. These labeled images are called <mark>training examples</mark> (a.k.a. data points or observations), and they form a <mark>dataset</mark>. </p>
+<p>the result is a program called a <mark>model</mark> in the sense of <mark style="background: #698BD0;">a mathematical model that is represented here by a classifier function</mark>.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+classifiers<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Images taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/02-what-is-machine-learning-dataset-class-function.png" alt="Dataset | 500" style="width: 500px; object-fit: fill">
+
+
+<br>
+
+<img src="https://media.vigliensoni.com/clips/03-what-is-machine-learning-class-mushroom.png" alt="Bolete | 500" style="width: 500px; object-fit: fill">
+
+
+
+<img src="https://media.vigliensoni.com/clips/03-what-is-machine-learning-class-mushroom-morel.png" alt="Morel | 500" style="width: 500px; object-fit: fill">
+</div>
+
+<aside class="notes"><p>the result is a program called a <mark>model</mark> in the sense of <mark style="background: #698BD0;">a mathematical model that is represented here by a classifier function</mark>.</p>
+<p>This program is the result of the learning process, and it can be used to identify new images</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+machine learning<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+<mark>ml is programming by examples</mark>
+
+the computer *<mark style="background: #698BD0;">learns</mark>* to perform a task from <mark style="background: #698BD0;">examples</mark> of this task
+</div>
+
+<aside class="notes"><p>In a sense, machine learning is programming by examples. </p>
+<p>the computer (i.e. the machine) <em>learns</em> to perform a task from examples of this task. </p>
+<p>In this context, “learns” broadly means that information from some data is used to create the program.</p>
+<p>Image identification is not the only application for which machine learning is useful; it is used nowadays to perform a variety of tasks, from identifying spam emails, to forecasting stock prices, to playing video games. </p>
+<p>Machine learning is not a drop-in replacement for traditional programming though.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+conventional ml applications are based on <mark>structured datasets</mark>
+
+the most common tasks are <mark style="background: #698BD0;">predicting values</mark> and <mark style="background: #698BD0;">identifying clusters</mark>
+</div>
+
+<aside class="notes"><p>conventional ml applications are based on large amounts of <mark>structured datasets</mark></p>
+<p>Structured datasets are what usually comes to mind when talking about data: numbers and labels stored in spreadsheets or databases</p>
+<p>Structured data could, for example, be sales <mark style="background: #698BD0;">data gathered by a retail company</mark> (type of product, dates of sale, price, etc) or data collected by <mark style="background: #698BD0;">weather stations</mark> (temperature, humidity, pressure, cloudiness, et)</p>
+<p>The <mark>most common task</mark> when dealing with structured data is <mark>predicting the value of a variable</mark> of interest (a.k.a. attribute), such as <mark style="background: #698BD0;">future sales numbers or weather forecasting</mark></p>
+<p>However, it can also be about making sense of the data, such as identifying clusters. </p>
+<p>Here are examples of such tasks.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/05-what-is-machine-learning-01.png" alt="Task 1 | 500" style="width: 500px; object-fit: fill">
+
+
+sales forecasting<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>forecast sales of retail stores</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/05-what-is-machine-learning-02.png" alt="Task 2 | 500" style="width: 500px; object-fit: fill">
+
+
+fraudulent transaction detection<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>detect fraudulent bank transactions</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/05-what-is-machine-learning-03.png" alt="Task 3 | 500" style="width: 500px; object-fit: fill">
+
+
+data-based disease diagnose<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>diagnose diseases based on medical data</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/05-what-is-machine-learning-04.png" alt="Task 4 | 500" style="width: 500px; object-fit: fill">
+
+
+ad clicking prediction<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>predict if someone is likely to click on an advertisement</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/05-what-is-machine-learning-05.png" alt="Task 5 | 500" style="width: 500px; object-fit: fill">
+
+
+content recommendation<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>select which content should be recommended to people</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/05-what-is-machine-learning-06.png" alt="Task 6 | 500" style="width: 500px; object-fit: fill">
+
+
+profiling people<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>separate customers into groups for marketing purposes</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+<mark>imitating human abilities</mark>
+
+perception
+
+intuition
+
+understanding text
+
+
+ <mark>unstructured data</mark>
+</div>
+
+<aside class="notes"><p>Another general domain of application has to do with imitating human abilities</p>
+<p>This includes <mark>perception</mark> tasks, such as <mark style="background: #698BD0;">understanding visual and audio data</mark>; <mark>intuition</mark> tasks, such as <mark style="background: #698BD0;">game playing</mark>;  and the very important task of understanding text (comprehension)</p>
+<p>This task is usually done in unstructured data, such as text, images, audio, videos, etc.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-01.png" alt="Task 1 | 500" style="width: 500px; object-fit: fill">
+
+
+detect road objects from an image or a video stream<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>Here are examples of applications that fall into this domain.</p>
+<p>detect road objects from an image or a video stream</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-02.png" alt="Task 2 | 500" style="width: 500px; object-fit: fill">
+
+
+enhance resolution of images<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>enhance resolution of images (upscaling)</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-06.png" alt="Task 6 | 500" style="width: 500px; object-fit: fill">
+
+
+transcribe audio speech into written text<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>transcribe audio speech into written text</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-07.png" alt="Task 7 | 350" style="width: 350px; object-fit: fill">
+
+
+play a game<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>play a game</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-05.png" alt="Task 5 | 500" style="width: 500px; object-fit: fill">
+
+
+detect the sentiment of a sentence<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>detect the sentiment of a sentence</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-03.png" alt="Task 3 | 500" style="width: 500px; object-fit: fill">
+
+
+translate text<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>translate text</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+ml applications<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+image taken from [Wolfram Alpha](https://www.wolfram.com/language/introduction-machine-learning/)
+</div>
+
+ <!-- .element: style="font-size: 12px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+<img src="https://media.vigliensoni.com/clips/04-what-is-ml-task-04.png" alt="Task 4 | 500" style="width: 500px; object-fit: fill">
+
+
+predict which word might follow<!-- .element: style="font-size: 24px" -->
+</div>
+
+<aside class="notes"><p>predict which word might follow</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+creative practice with ai
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+stochastic parrots<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+<div class="block">
+
+<img src="https://peopleofcolorintech.com/wp-content/uploads/2023/03/ezgif.com-webp-to-png-9-1080x635.png" alt="Timnit Gebru | 175" style="width: 175px; object-fit: fill">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Bender, Emily M., Gebru, Timnit, McMillan-Major, Angelina, Shmitchell, Shmargaret. 2021. “On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?”. In *FAccT ’21: Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency*.
+</div>
+
+<!-- .element: style="margin-top: -100px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+## _On the Dangers of Stochastic Parrots_
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-opacity="0.9" data-background-image="https:/media.vigliensoni.com/clips/timnit-gebru-fired-01.png" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+after the publication of the article, timnit gebru announced that the employer had [forced her out](https://twitter.com/timnitGebru/status/1334341991795142667)
+
+she co-led the google's ethical ai team, where she examined the social implications of AI, and bias in AI systems
+
+the head of google ai sent an [internal email](https://twitter.com/JeffDean/status/1334953632719011840) stating that the paper “didn’t meet our bar for publication”
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+google pushed gebru out because of the <mark>inconvenient truths</mark> that she was uncovering
+
+her exit was the culmination of a conflict over the “stochastic parrots” article she coauthored
+</div>
+
+<aside class="notes"><p>many leaders in the field of AI ethics stated that Google pushed her out because of the <mark>inconvenient truths</mark> that she was uncovering about a core line of its research </p>
+<p>her exit was the culmination of a conflict over the “stochastic parrots” article she coauthored</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+stochastic parrots<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+environmental and financial costs
+    
+bias and fairness
+
+misuse and misinformation
+</div>
+
+<aside class="notes"><p><strong>environmental and financial costs</strong>. there&#39;s a <mark>substantial environmental impact</mark> of training large language models, pointing out the significant <mark style="background: #698BD0;">carbon footprint and energy consumption required</mark>. It also addresses the <mark>high financial costs</mark>, suggesting that the resources needed for such endeavors could <mark style="background: #698BD0;">exacerbate existing inequalities in the field of AI</mark> </p>
+<p><strong>bias and fairness</strong>.  <mark>LMs can amplify and perpetuate societal biases present in the training data</mark>. these biases can manifest in <mark style="background: #698BD0;">various forms, including racism, sexism, and other forms of discrimination</mark>, leading to harmful outputs that <mark style="background: #FF5582A6;">reinforce existing social inequities</mark>.    </p>
+<p><strong>misuse and misinformation</strong>. the potential for misuse of <mark>LMs for generating misleading information, propaganda, or fake news is a critical concern</mark>. the paper emphasizes the ease with which <mark style="background: #698BD0;">these models can be exploited to produce convincing and harmful content at scale</mark>.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+stochastic parrots<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+ 
+ ethical and social implications
+
+lack of transparency and accountability
+
+questioning the scalability paradigm
+
+need for multidisciplinary approaches
+</div>
+
+<aside class="notes"><p><strong>ethical and social implications</strong>. the paper argues that the development of large-scale language models raises <mark>profound ethical and social questions</mark>, particularly regarding <mark style="background: #698BD0;">consent, privacy, and the representation of marginalized groups</mark>. It questions whether the <mark style="background: #698BD0;">data used in training these models is being sourced ethically and whether individuals are aware that their data is being used in this way</mark>. </p>
+<p><strong>lack of transparency and accountability</strong>. there’s a call for <mark>greater transparency and accountability</mark> in the development and deployment of language models. <mark style="background: #698BD0;">without openness regarding how models are trained, what data they are trained on, and how decisions are made</mark>, it is <mark style="background: #FF5582A6;">difficult to assess and mitigate potential harms</mark>. </p>
+<p><strong>questioning the scalability paradigm</strong>. the paper <mark>challenges the notion that “bigger is better”</mark> in the context of language models. it suggests <mark style="background: #698BD0;">rethinking the approach to developing AI systems</mark>, advocating for more sustainable, equitable, and responsible methods.</p>
+<p><strong>need for multidisciplinary approaches</strong>. Finally, the authors <mark>emphasize the importance of incorporating insights from various fields into the development and evaluation of AI systems</mark> (e.g.,  sociology, psychology, and critical race theory). a <mark style="background: #698BD0;">multidisciplinary approach is crucial for understanding the full scope of impacts that these technologies</mark> may have on society.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+anatomy of ai<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+<div class="block">
+
+Crawford, Kate, and Vladan Joler. 2018. “Anatomy of an AI System: The Amazon Echo as an Anatomical Map of Human Labor, Data and Planetary Resources.” *AI Now Institute and Share Lab*
+</div>
+
+<!-- .element: style="font-size: 18px" -->
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+## _Anatomy of AI_
+</div>
+
+<aside class="notes"><p>Kate Crawford is scholar on the social implications of data systems, machine learning, and artificial intelligence</p>
+<p>Vladan Joler explores the complexities of technology through research and visual art.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+anatomy of ai<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+unveil the full scope and scale of the <mark style="background: #698BD0;">material, labor, and data infrastructures</mark> necessary for ai systems
+
+dissects the life cycle of amazon echo to illustrate the socio-economic and environmental <mark>impact of AI technologies</mark>
+</div>
+
+<aside class="notes"><p>The project aims to unveil the full scope and scale of the <mark>material, labor, and data infrastructures that underpin AI systems</mark>.</p>
+<p>the research dissects the life cycle of Amazon Echo as a case study <mark>to illustrate the broad socio-economic and environmental impact of AI technologies</mark>. </p>
+<p>the map breaks down the Echo&#39;s production process into three key components:</p>
+<ol>
+<li>Earth: The extraction of raw materials needed to create the devices.</li>
+<li>Work: The human labor—and sometimes labor exploitation—involved in manufacturing, maintenance, and managing AI systems.</li>
+<li>Data: The vast amount of data required for training AI, as well as issues around privacy and surveillance that emerge from data collection processes.</li>
+</ol>
+<p>The project illustrates how complex supply chains are involved in creating a seemingly simple voice-activated device. It examines everything from mining rare earth minerals for components to energy consumption during use, and ultimately to e-waste disposal when these devices reach their end-of-life.</p>
+<p>Crawford&#39;s work shines a light on ethical considerations concerning resource depletion, environmental degradation, labor rights abuses in global supply chains, as well as privacy concerns related to data collection by AI devices. Through this lens, users are encouraged to think critically about the broader impacts of consumer electronics powered by artificial intelligence.</p>
+<p>The &quot;Anatomy of AI&quot; is not just an informative resource but also serves as a call for more responsible creation and use of technology that considers social justice and ecological sustainability alongside innovation.
+<a href="https://anatomyof.ai/">https://anatomyof.ai/</a></p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+anatomy of ai<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+three key components
+
+<mark style="background: #698BD0;">earth:</mark> extraction of raw materials
+
+<mark style="background: #698BD0;">work:</mark> the human labor
+
+<mark style="background: #698BD0;">data:</mark> the massive amount of data
+
+
+call for responsible creation and use of technology
+
+consider social justice and ecological sustainability alongside innovation
+</div>
+
+<aside class="notes"><p>the map breaks down the Echo&#39;s production process into three key components:</p>
+<ol>
+<li><mark style="background: #698BD0;">Earth</mark>: The extraction of raw materials needed to create the devices.</li>
+<li><mark style="background: #698BD0;">Work</mark>: The human labor—and sometimes labor exploitation—involved in manufacturing, maintenance, and managing AI systems.</li>
+<li><mark style="background: #698BD0;">Data</mark>: The vast amount of data required for training AI, as well as issues around privacy and surveillance that emerge from data collection processes.</li>
+</ol>
+<p>Crawford&#39;s work shines a light on ethical considerations concerning resource depletion, environmental degradation, labor rights abuses in global supply chains, as well as privacy concerns related to data collection by AI devices. Through this lens, users are encouraged to think critically about the broader impacts of consumer electronics powered by artificial intelligence.</p>
+<p>The &quot;Anatomy of AI&quot; is not just an informative resource but also serves as a call for more responsible creation and use of technology that considers social justice and ecological sustainability alongside innovation.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-auto-animate="true" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<mark style="background-color:grey; color:white; font-style:italic;">
+<div class="block">
+
+anatomy of ai<!-- .element: style="font-size: 24px" -->
+</div>
+
+
+
+</mark>
+</div>
+
+<div class="" style="position: absolute; left: NaN%; top: 0%; height: undefined%; width: undefined%; display: flex; flex-direction: column; align-items: center; justify-content: center" ="100 6">
+
+
+</div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 15%; height: 70%; width: 64%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 0%; height: 35%; width: 25%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start" align="right">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 70%; top: 55%; height: 70%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start" align="top">
+
+
+</div>
+
+<div class="" style="opacity: 25%; position: absolute; left: 25%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="opacity: 100%; position: absolute; left: 2%; top: 25%; height: 50%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+</div>
+
+<div class="" style="position: absolute; left: 75%; top: 15%; height: 70%; width: 20%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+<!-- .element: style="font-size: 20px" -->
+</div>
+
+
+
+<div class="has-dark-background" style="background-color: indianred; position: absolute; left: 0%; top: 100%; height: 0%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<mark style="background-color:transparent; color:white; font-size:50%">
+
+</mark>
+</div>
+
+
+<div class="" style="font-size: 66%; color: white; position: absolute; left: 0%; top: 80%; height: 20%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+
+
+
+
+
+
+call for responsible creation and use of technology
+
+consider social justice and ecological sustainability alongside innovation
+</div>
+
+<aside class="notes"><p>The &quot;Anatomy of AI&quot; is not just an informative resource but also serves as a call for more responsible creation and use of technology that considers social justice and ecological sustainability alongside innovation.</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## new media reader
+## presentations
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Lindsay Rodgers (AAII)
+
+## *Mapping marginalized voices and women’s contributions to AI*
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# CART 210 final project
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+the following four exercises are designed to help you think about your final project topic and to refine your abstract
+
+complete them in your own time
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## <mark style="background: #BBFABBA6;">exercise 1— abstract</mark>
+
+<mark>refine the scope</mark> by completing the following sentences:
+
+<div class="block">
+
+“It is beyond the scope of this essay to examine ...
+
+“Instead, it will focus on ... 
+
+“It is motivated by …
+
+“The general implications are …
+</div>
+
+
+<!-- .element: style="font-size: 32px" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## <mark style="background: #BBFABBA6;">exercise 2 — abstract</mark>
+
+if you have written your abstract in first-person, <mark>re-write it in the 3rd person</mark>
+
+<mark>remove all personal pronouns</mark> unless they reflect an anecdote or personal opinion
+
+find a balance:  does your topic need a more personal style? is the credibility of “impersonal authority” appropriate for your subject?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## <mark style="background: #BBFABBA6;">exercise 3 — abstract</mark>
+
+
+<mark>remove the extraneous</mark>
+
+go through your abstract and remove all phrases that are superfluous
+
+  
+<div class="block">
+
+~~“I think”~~
+
+~~“In my opinion,  …”~~
+
+~~“For my CART210 final essay …”~~
+</div>
+
+
+<!-- .element: style="font-size: 32px" -->
+
+
+remove all notions that do not contribute to the stated intention of the essay
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## <mark style="background: #BBFABBA6;">exercise 4 — title</mark>
+
+<mark>craft your title</mark>
+
+tension between simple/evocative/broad and complex/specific/precise title
+
+[enter your final project title here](https://docs.google.com/document/d/18ma5e94FebpS9CO53kaIWfatv1KUk-dRRvuEDvx0h-g/edit?usp=sharing)
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
