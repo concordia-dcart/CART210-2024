@@ -12,7 +12,7 @@ Some classes heavily incorporate [Jhave's](https://glia.ca/) course conceptualiz
 - [Week 06. ADHD](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C6)
 - [Week 07. Cyberself, cyberspace, and cyberculture](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C7)
 - [Week 08. Machine learning and AI](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C8)
-
+- [Week 09. Copyright and copyleft](https://concordia-dcart.github.io/CART210-2024/C01-introduction/C9)
 
 ## Resources
 - [Syllabus](https://drive.google.com/file/d/1aucaCLxYD-4tfr-pDtnQw6uOi3R3SdtV/view?usp=drive_link)
